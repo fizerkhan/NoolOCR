@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="edu.panimalar.ocr.core.ocrbuilder">
+      <ocrbuilder
+            Class="edu.panimalar.ocr.tamilocr.builder.TamilOCRBuilder"
+            Name="Tamil OCR">
+         <language
+               Name="tamil"></language>
+      </ocrbuilder>
+   </extension>
+   <!--<extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="edu.panimalar.ocr.ui.preferencepage"
+            class="edu.panimalar.ocr.tamiocr.ui.preferences.PreferencePage"
+            id="edu.panimalar.ocr.tamilocr.ui.preferencepage"
+            name="Tamil OCR">
+      </page>
+   </extension> -->
+
+</plugin>

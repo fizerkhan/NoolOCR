@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OCR Core
+Bundle-SymbolicName: edu.panimalar.ocr.core;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.panimalar.ocr.core.OCRCorePlugin
+Bundle-Vendor: Panimalar Engineering College
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ edu.panimalar.ocr.pdf,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: edu.panimalar.ocr.core,
+ edu.panimalar.ocr.core.document,
+ edu.panimalar.ocr.core.document.pdf,
+ edu.panimalar.ocr.core.internel.transform;x-internal:=true,
+ edu.panimalar.ocr.core.transform

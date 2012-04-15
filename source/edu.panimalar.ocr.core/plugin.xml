@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="edu.panimalar.ocr.core.ocrbuilder" name="OCR Builder" schema="schema/edu.panimalar.ocr.core.ocrbuilder.exsd"/>
+   <extension
+         id="ocrnature"
+         name="OCR Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="edu.panimalar.ocr.core.OCRNature">
+         </run>
+      </runtime>
+   </extension>
+
+</plugin>

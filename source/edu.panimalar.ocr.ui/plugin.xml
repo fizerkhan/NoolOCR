@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="edu.panimalar.ocr.ui.perspectives.OCRPerspectiveFactory"
+            icon="icons/ocr-perspective32.png"
+            id="edu.panimalar.ocr.ui.perspective.OCRPerspective"
+            name="OCR">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="edu.panimalar.ocr.ui.newwizards.category"
+            name="OCR">
+      </category>
+      <wizard
+            category="edu.panimalar.ocr.ui.newwizards.category"
+            class="edu.panimalar.ocr.ui.wizards.NewOCRProjectWizard"
+            finalPerspective="edu.panimalar.ocr.ui.perspective.OCRPerspective"
+            hasPages="true"
+            icon="icons/ocr-project16.png"
+            id="edu.panimalar.ocr.ui.newwizard.newocrproject"
+            name="OCR Project"
+            preferredPerspectives="edu.panimalar.ocr.ui.perspective.OCRPerspective">
+         <description>
+            Create a new OCR Project
+         </description>
+      </wizard>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="OCR Command Category"
+            id="edu.panimalar.ocr.ui.commands.main.category"
+            name="OCR Command Category">
+      </category>
+      <command
+            name="Read Images"
+            categoryId="edu.panimalar.ocr.ui.commands.main.category"
+            id="edu.panimalar.ocr.ui.commands.readimagescommand">
+      </command>
+      <command
+            categoryId="edu.panimalar.ocr.ui.commands.main.category"
+            id="edu.panimalar.ocr.ui.commands.importimagescommand"
+            name="Import images">
+      </command>
+      <command
+            categoryId="edu.panimalar.ocr.ui.commands.main.category"
+            id="edu.panimalar.ocr.ui.commands.generatedocumentcommand"
+            name="Generate document">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="edu.panimalar.ocr.ui.commands.readimagescommand"
+            class="edu.panimalar.ocr.ui.commands.ReadImagesHandler">
+      </handler>
+      <handler
+            class="edu.panimalar.ocr.ui.commands.ImportImagesHandler"
+            commandId="edu.panimalar.ocr.ui.commands.importimagescommand">
+      </handler>
+      <handler
+            class="edu.panimalar.ocr.ui.commands.GenerateDocumentHandler"
+            commandId="edu.panimalar.ocr.ui.commands.generatedocumentcommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="edu.panimalar.ocr.ui.commands.readimagescommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="edu.panimalar.ocr.ui.commands.importimagescommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+7">
+      </key>
+      <key
+            commandId="edu.panimalar.ocr.ui.commands.generatedocumentcommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+8">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               icon="icons/ocr-project16.png"
+               id="edu.panimalar.ocr.ui.main.menubar"
+               label="OCR"
+               mnemonic="M">
+            <command
+                  commandId="edu.panimalar.ocr.ui.commands.readimagescommand"
+                  icon="icons/readimages16.png"
+                  label="Read Images"
+                  mnemonic="S"
+                  tooltip="Read images">
+            </command>
+            <command
+                  commandId="edu.panimalar.ocr.ui.commands.importimagescommand"
+                  icon="icons/importimages16.png"
+                  label="Import Images"
+                  mnemonic="S"
+                  tooltip="Import images">
+            </command>
+            <command
+                  commandId="edu.panimalar.ocr.ui.commands.generatedocumentcommand"
+                  icon="icons/document16.png"
+                  label="Generate Document"
+                  mnemonic="S"
+                  tooltip="Document documents from text file">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="edu.panimalar.ocr.ui.main.new.toolbar">
+            <command
+                  commandId="org.eclipse.ui.newWizard"
+                  icon="icons/ocr-project16.png"
+                  label="New OCR Project"
+                  style="push"
+                  tooltip="Create a new OCR Project">
+               <parameter
+                     name="newWizardId"
+                     value="edu.panimalar.ocr.ui.newwizard.newocrproject">
+               </parameter>
+            </command>
+            <visibleWhen
+                  checkEnabled="true">
+               <with
+                     variable="activeWorkbenchWindow.activePerspective">
+                  <equals
+                        value="edu.panimalar.ocr.ui.perspective.OCRPerspective">
+                  </equals>
+               </with>
+            </visibleWhen>
+         </toolbar>
+         <toolbar
+               id="edu.panimalar.ocr.ui.main.toolbar">
+            <command
+                  commandId="edu.panimalar.ocr.ui.commands.readimagescommand"
+                  icon="icons/readimages16.png"
+                  label="Read Images"
+                  tooltip="Read images">
+            </command>
+            <command
+                  commandId="edu.panimalar.ocr.ui.commands.importimagescommand"
+                  icon="icons/importimages16.png"
+                  label="Import Images into project"
+                  tooltip="Import images into project">
+            </command>
+            <command
+                  commandId="edu.panimalar.ocr.ui.commands.generatedocumentcommand"
+                  icon="icons/document16.png"
+                  label="Generate Document"
+                  tooltip="Generate Document">
+            </command>
+            <visibleWhen
+                  checkEnabled="true">
+               <with
+                     variable="activeWorkbenchWindow.activePerspective">
+                  <equals
+                        value="edu.panimalar.ocr.ui.perspective.OCRPerspective">
+                  </equals>
+               </with>
+            </visibleWhen>
+         </toolbar>
+      </menuContribution>
+   </extension>
+	<extension
+         point="org.eclipse.ui.views">
+      <category
+            id="edu.panimalar.ocr.ui.navigator.category"
+            name="OCR"/>
+      <view
+            allowMultiple="false"
+            category="edu.panimalar.ocr.ui.navigator.category"
+            class="org.eclipse.ui.navigator.CommonNavigator"
+            icon="icons/ocr-project16.png"
+            id="edu.panimalar.ocr.ui.navigator.view"
+            name="OCR Navigator"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewer
+            viewerId="edu.panimalar.ocr.ui.navigator.view">
+         <popupMenu
+               allowsPlatformContributions="true"
+               id="edu.panimalar.ocr.ui.navigator.view#PopupMenu">
+            <insertionPoint
+                  name="group.new"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.goto">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.open"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.openWith">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.show"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.edit"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.reorganize">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.port"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.build"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="additions"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.properties"
+                  separator="true">
+            </insertionPoint>
+         </popupMenu>
+      </viewer>
+      <viewerContentBinding viewerId="edu.panimalar.ocr.ui.navigator.view">
+         <includes>
+            <contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.workingSets">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.linkHelper">
+            </contentExtension>
+            <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/> 
+            <!--<contentExtension
+                  pattern="edu.panimalar.ocr.ui.navigator.filters.hideNonOCRProjects"/> --> 
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="edu.panimalar.ocr.ui.navigator.view">
+         <includes>
+            <actionExtension pattern="org.eclipse.ui.navigator.resources.*"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonFilter
+            activeByDefault="true"
+            id="edu.panimalar.ocr.ui.navigator.filters.hideNonOCRProjects"
+            name="Hide non-OCR Projects">
+         <filterExpression>
+            <not>
+               <adapt type="org.eclipse.core.resources.IProject">
+                  <test
+                        property="org.eclipse.core.resources.projectNature"
+                        value="edu.panimalar.ocr.core.ocrnature"/>
+               </adapt>
+            </not>
+         </filterExpression>
+      </commonFilter>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="edu.panimalar.ocr.ui.editors.ProofReaderEditor"
+            default="true"
+            extensions="txt, text"
+            icon="icons/proofreader16.png"
+            id="edu.panimalar.ocr.ui.editor.proofreader"
+            name="Proof Reader">
+      </editor>
+      <editor
+            class="edu.panimalar.ocr.ui.editors.ImageViewer"
+            default="true"
+            extensions="jpeg, jpg, png, gif, ico, bmp, tif, tiff"
+            icon="icons/image16.png"
+            id="edu.panimalar.ocr.ui.editor.imageviewer"
+            name="Image Viewer">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="edu.panimalar.ocr.ui.editor.proofreader.editoractions"
+            targetID="edu.panimalar.ocr.ui.editor.proofreader">
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/ZoomIn16.gif"
+               id="toolbar.zoomin"
+               label="ZoomIn"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Zoom in">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/ZoomOut16.gif"
+               id="toolbar.zoomout"
+               label="ZoomOut"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Zoom out">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/Fit16.gif"
+               id="toolbar.fit"
+               label="FitWindow"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Fit window">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/Original16.gif"
+               id="toolbar.original"
+               label="OriginalSize"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Original size">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/Rotate16.gif"
+               id="toolbar.rotate"
+               label="Rotate"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Rotate">
+         </action>
+      </editorContribution>
+      <editorContribution
+            id="edu.panimalar.ocr.ui.editor.imageviewer.editoractions"
+            targetID="edu.panimalar.ocr.ui.editor.imageviewer">
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/ZoomIn16.gif"
+               id="toolbar.zoomin"
+               label="ZoomIn"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Zoom in">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/ZoomOut16.gif"
+               id="toolbar.zoomout"
+               label="ZoomOut"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Zoom out">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/Fit16.gif"
+               id="toolbar.fit"
+               label="FitWindow"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Fit window">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/Original16.gif"
+               id="toolbar.original"
+               label="OriginalSize"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Original size">
+         </action>
+         <action
+               class="edu.panimalar.ocr.ui.editors.actions.ImageViewerActionDelegate"
+               icon="icons/Rotate16.gif"
+               id="toolbar.rotate"
+               label="Rotate"
+               style="push"
+               toolbarPath="group.ocreditor"
+               tooltip="Rotate">
+         </action>
+      </editorContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="edu.panimalar.ocr.ui.importwizard.category"
+            name="OCR">
+      </category>
+      <wizard
+            category="edu.panimalar.ocr.ui.importwizard.category"
+            class="edu.panimalar.ocr.ui.wizards.ImportImagesWizard"
+            icon="icons/importimages16.png"
+            id="edu.panimalar.ocr.ui.importwizard.importimages"
+            name="Import Images">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="edu.panimalar.ocr.ui.preferences.PreferencePage"
+            id="edu.panimalar.ocr.ui.preferencepage"
+            name="Nool OCR">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="edu.panimalar.ocr.ui.dialogs.OCRProjectPropertyPage"
+            icon="icons/ocr-project16.png"
+            id="edu.panimalar.ocr.ui.dialogs.prjpropertypage"
+            name="OCR Project"
+            objectClass="org.eclipse.core.resources.IProject">
+      </page>
+   </extension>
+   
+</plugin>

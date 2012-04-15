@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="uky.article.imageviewerewe"
+   name="image viewer Plug-in"
+   version="1.0.0"
+   provider-name="Chengdong Li"
+   class="uky.article.imageviewer.ImageViewerPlugin">
+
+   <runtime>
+      <library name="imageviewer.jar"/>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+   </requires>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Image"
+            id="uky.article.imageviewer">
+      </category>
+      <view
+            name="Image Viewer"
+            icon="icons/image16.png"
+            category="uky.article.imageviewer"
+            class="uky.article.imageviewer.views.ImageView"
+            id="uky.article.imageviewer.views.ImageView">
+      </view>
+   </extension>
+   
+<!-- Toolbar buttons -->
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            targetID="uky.article.imageviewer.views.ImageView"
+            id="uky.article.imageviewer.views.ImageView.pushbutton">
+         <!-- Open button -->
+         <action
+               label="open"
+               icon="icons/Open16.gif"
+               tooltip="Open image"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.open">
+               <!--id="org.eclipse.ui.file.open"-->
+         </action>
+         <!-- Rotation button -->
+         <action
+               label="Rotate"
+               icon="icons/Rotate16.gif"
+               tooltip="Rotate"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.rotate">
+         </action>
+         <!-- Fit button -->
+         <action
+               label="FitWindow"
+               icon="icons/Fit16.gif"
+               tooltip="Fit window"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.fit">
+         </action>
+         <!-- Original button -->
+         <action
+               label="OriginalSize"
+               icon="icons/Original16.gif"
+               tooltip="Original size"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.original">
+         </action>
+         <!-- ZoomIn button -->
+         <action
+               label="ZoomIn"
+               icon="icons/ZoomIn16.gif"
+               tooltip="Zoom in"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.zoomin">
+         </action>
+         <!-- ZoomOut button -->
+         <action
+               label="ZoomOut"
+               icon="icons/ZoomOut16.gif"
+               tooltip="Zoom out"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.zoomout">
+         </action>
+      </viewContribution>
+   </extension>
+
+</plugin>

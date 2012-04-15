@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="edu.panimalar.ocr.core.ocrbuilder">
+      <ocrbuilder
+            Class="edu.panimalar.ocr.gocr.builder.GOCRBuilder"
+            ImageTypes="pnm, pgm, pbm, ppm, pcx"
+            Name="GOCR">
+         <language
+               Name="eng"
+               description="English Language Support">
+         </language>
+      </ocrbuilder>
+   </extension>
+
+</plugin>

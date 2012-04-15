@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nool OCR Framework
+Bundle-SymbolicName: edu.panimalar.ocr;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.panimalar.ocr.OCRFrameworkPlugin
+Bundle-Vendor: Panimalar Engineering College
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

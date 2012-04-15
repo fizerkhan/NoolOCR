@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OCR Utils
+Bundle-SymbolicName: edu.panimalar.ocr.utils;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.panimalar.ocr.utils.OCRUtilsPlugin
+Bundle-Vendor: Panimalar Engineering College
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.core.filesystem,
+ org.eclipse.ui.console,
+ edu.panimalar.ocr.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: edu.panimalar.ocr.utils,
+ edu.panimalar.ocr.utils.file,
+ edu.panimalar.ocr.utils.project,
+ edu.panimalar.ocr.utils.runtime

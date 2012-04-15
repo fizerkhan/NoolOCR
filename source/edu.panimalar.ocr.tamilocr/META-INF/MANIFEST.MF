@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tamil OCR Plugin
+Bundle-SymbolicName: edu.panimalar.ocr.tamilocr;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.panimalar.ocr.tamilocr.TamilOCRPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ edu.panimalar.ocr.core,
+ edu.panimalar.ocr.ui,
+ edu.panimalar.ocr.utils,
+ org.eclipse.ui.console
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Panimalar Engineering College
+Bundle-ActivationPolicy: lazy
+Eclipse-PlatformFilter: (& (osgi.ws=win32) (osgi.os=win32) (osgi.arch=x86))

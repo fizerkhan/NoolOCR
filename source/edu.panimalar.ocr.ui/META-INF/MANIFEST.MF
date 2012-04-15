@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OCR GUI
+Bundle-SymbolicName: edu.panimalar.ocr.ui;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.panimalar.ocr.ui.OCRUIPlugin
+Bundle-Vendor: Panimalar Engineering College
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.console,
+ edu.panimalar.ocr.core,
+ org.eclipse.ui.navigator,
+ org.eclipse.ui.navigator.resources,
+ edu.panimalar.ocr.utils,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ uky.article.imageviewer
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.ui.dialogs
+Export-Package: edu.panimalar.ocr.ui,
+ edu.panimalar.ocr.ui.commands,
+ edu.panimalar.ocr.ui.console,
+ edu.panimalar.ocr.ui.perspectives,
+ edu.panimalar.ocr.ui.wizards
+Bundle-ActivationPolicy: lazy

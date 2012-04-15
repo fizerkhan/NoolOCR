@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="Nool OCR Framework">
+         <property
+               name="appName"
+               value="Nool OCR Framework">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/ocr128.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Nool OCR Framework&#x0A;&#x0A;Version : 1.0.0&#x0A;Build id : 25092010&#x0A;&#x0A;(c) Copyright  Fizer Khan and others 2000, 2010.  All rights reserved.&#x0A;&#x0A;This product is based on software developed by http://www.eclipse.org/&#x0A;Eclipse Version : 3.6.0">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/ocr16.png,icons/ocr32.png,icons/ocr48.png,icons/ocr64.png,icons/ocr128.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

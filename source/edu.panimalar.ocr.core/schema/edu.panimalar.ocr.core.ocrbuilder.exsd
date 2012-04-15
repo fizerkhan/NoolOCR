@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="edu.panimalar.ocr.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="edu.panimalar.ocr.core" id="edu.panimalar.ocr.core.ocrbuilder" name="OCR Builder"/>
+      </appinfo>
+      <documentation>
+         OCR builder read images and convert into text file.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="ocrbuilder"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="ocrbuilder">
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="language" minOccurs="1" maxOccurs="unbounded"/>
+         </choice>
+         <attribute name="Name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Name of the OCR
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="Class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Contribution Class for OCR Builder. It must extend edu.panimalar.ocr.core.transform.OCRBuilder
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="edu.panimalar.ocr.core.transform.OCRBuilder:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="ImageTypes" type="string">
+            <annotation>
+               <documentation>
+                  Supported image types
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="language">
+      <annotation>
+         <documentation>
+            Supported language
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="Name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Name of the supported language
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  Description of the language
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>
