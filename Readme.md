@@ -40,15 +40,15 @@ You have to import Nool OCR source code into Eclipse. Run ocr.product file under
 Steps for execution
 --------------------
 
-1.Open Nool OCR Framework and click new ocr project and give project name,select the language and click next button.
+1. Open Nool OCR Framework and click new ocr project and give project name,select the language and click next button.
 
-2.Add images from the  external folder and click finish button.
+2. Add images from the  external folder and click finish button.
 
-3.Select the project and click read images icon.New window will opened in that window select ocr reader and click ok.
+3. Select the project and click read images icon.New window will opened in that window select ocr reader and click ok.
 
-4.Images will be read by ocr reader.select the project and click generate document icon then the output will be converted into pdf format.
+4. Images will be read by ocr reader.select the project and click generate document icon then the output will be converted into pdf format.
 
-5.Similar way you can generate more no of project in that nool ocr framework.
+5. Similar way you can generate more no of project in that nool ocr framework.
 
 
 Known Issues
