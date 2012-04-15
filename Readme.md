@@ -4,12 +4,12 @@ NooL OCR Framework
 Nool OCR is licensed under GPL V3.
 Nool OCR is a framework to integrate all OCR software in one platfrom.
 
-Overview:
+Overview
 ---------
 Optical Character Recognition (OCR) is a process of converting printed 
 materials into text or word processing files that can be easily edited and stored. 
 The technology has enabled such materials to be stored using much less storage 
-space than the hard materials
+space than the hardï¿½materials
 
 Now a day there are lot of OCR available in the market for different languages
 but there is no centralized framework for all languages.The intension of the project
@@ -19,7 +19,7 @@ GOCR. NoolOCR provided a eclipse extension machanism, we can incorporate any too
 
 Nool OCR is Eclipse RCP product.
 
-Features:
+Features
 ---------
 
 1. Support to convert images into text files.
@@ -37,7 +37,7 @@ to your Eclipse folder.
 You have to import Nool OCR source code into Eclipse. Run ocr.product file under 'edu.panimalar.ocr' plugin.
 
 
-Steps for execution:
+Steps for execution
 --------------------
 
 1.Open Nool OCR Framework and click new ocr project and give project name,select the language and click next button.
@@ -51,7 +51,7 @@ Steps for execution:
 5.Similar way you can generate more no of project in that nool ocr framework.
 
 
-Known Issues:
+Known Issues
 -------------
 1. Not able to arrange the text file while generating the PDF file.
 
