@@ -9,7 +9,7 @@ Overview
 Optical Character Recognition (OCR) is a process of converting printed 
 materials into text or word processing files that can be easily edited and stored. 
 The technology has enabled such materials to be stored using much less storage 
-space than the hard�materials
+space than the hard materials
 
 Now a day there are lot of OCR available in the market for different languages
 but there is no centralized framework for all languages.The intension of the project
