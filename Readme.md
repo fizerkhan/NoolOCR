@@ -1,11 +1,11 @@
 NooL OCR Framework
 ------------------
 
-Nool OCR is licensed under GPL V3.
-Nool OCR is a framework to integrate all OCR software in one platfrom.
+Nool OCR is a eclipse rich client application to integrate all OCR software in one place.
 
 Overview
 ---------
+
 Optical Character Recognition (OCR) is a process of converting printed 
 materials into text or word processing files that can be easily edited and stored. 
 The technology has enabled such materials to be stored using much less storage 
@@ -53,5 +53,11 @@ Steps for execution
 
 Known Issues
 -------------
+
 1. Not able to arrange the text file while generating the PDF file.
+
+License
+-------
+**MIT**
+
 
